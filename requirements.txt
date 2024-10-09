@@ -10,3 +10,4 @@ google-cloud-logging
 google-cloud-storage
 ee
 httplib2shim
+httplib2
