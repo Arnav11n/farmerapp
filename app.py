@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
 import ee
 from google.oauth2 import service_account
+import collections
+collections.Callable = collections.abc.Callable
 
 app = Flask(__name__)
 
