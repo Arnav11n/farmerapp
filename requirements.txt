@@ -3,3 +3,4 @@ gunicorn==20.1.0
 google-auth==2.6.0
 earthengine-api==0.1.299
 google.oauth
+Werkzeug==2.2.3
