@@ -5,7 +5,7 @@ from google.oauth2 import service_account
 app = Flask(__name__)
 
 # Initialize Earth Engine
-key_file = 'C:/Users/Arnav Narang/Documents/ee-arnavnarang11-895b4181b723.json'  # Update with your key file path
+key_file = 'ee-arnavnarang11-895b4181b723.json'  # Update with your key file path
 scopes = ['https://www.googleapis.com/auth/earthengine']
 credentials = service_account.Credentials.from_service_account_file(key_file, scopes=scopes)
 ee.Initialize(credentials)
