@@ -90,5 +90,5 @@ def get_data(latitude, longitude):
         'average_ndvi': avgNDVI.get('NDVI').getInfo()
     })
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=10000)
