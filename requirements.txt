@@ -8,5 +8,5 @@ Flask
 google-auth-oauthlib
 google-cloud-logging
 google-cloud-storage
-google-earth-engine
+ee
 httplib2shim>=1.0
