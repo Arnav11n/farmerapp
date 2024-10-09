@@ -12,14 +12,22 @@ scopes = ['https://www.googleapis.com/auth/earthengine']
 credentials = service_account.Credentials.from_service_account_file(key_file, scopes=scopes)
 ee.Initialize(credentials)
 
-@app.route('/api/data/<float:latitude>/<float:longitude>', methods=['GET'])
-def get_data(latitude, longitude):
+@app.route('/api', methods=['GET'])
+def get_data():
+    # Get latitude and longitude from query parameters
+    latitude = request.args.get('latitude', type=float)
+    longitude = request.args.get('longitude', type=float)
+    
+    # Check if latitude and longitude are provided
+    if latitude is None or longitude is None:
+        return jsonify({'error': 'Latitude and longitude are required.'}), 400
+    
     # Define the area of interest
     aoi = ee.Geometry.Point([longitude, latitude])
     
     # Define the time period for analysis
     startDate = '2022-01-01'
-    endDate = '2022-12-31'
+    endDate = '2023-12-31'
 
     # 1. Load and calculate the average Land Surface Temperature (LST) from MODIS
     temperatureCollection = ee.ImageCollection('MODIS/006/MOD11A2') \
@@ -89,6 +97,7 @@ def get_data(latitude, longitude):
         'average_soil_moisture': soilMoistureValue.getInfo(),
         'average_ndvi': avgNDVI.get('NDVI').getInfo()
     })
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=10000)
