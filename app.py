@@ -12,7 +12,7 @@ scopes = ['https://www.googleapis.com/auth/earthengine']
 credentials = service_account.Credentials.from_service_account_file(key_file, scopes=scopes)
 ee.Initialize(credentials)
 
-@app.route('/api', methods=['GET'])
+@app.route('/api/data', methods=['GET'])
 def get_data():
     # Get latitude and longitude from query parameters
     latitude = request.args.get('latitude', type=float)
