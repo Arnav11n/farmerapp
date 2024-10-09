@@ -4,3 +4,9 @@ google-auth==2.6.0
 earthengine-api==0.1.299
 google.oauth
 Werkzeug==2.2.3
+Flask
+google-auth-oauthlib
+google-cloud-logging
+google-cloud-storage
+google-earth-engine
+httplib2shim>=1.0
