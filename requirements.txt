@@ -9,4 +9,4 @@ google-auth-oauthlib
 google-cloud-logging
 google-cloud-storage
 ee
-httplib2shim>=1.0
+httplib2shim
